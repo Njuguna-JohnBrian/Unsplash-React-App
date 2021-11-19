@@ -6,6 +6,9 @@ import unsplash from "../api/unsplash";
 
 class App extends React.Component {
   state = { images: [] };
+  componentDidMount() {
+    this.onSearchSubmit("Apple");
+  }
   onSearchSubmit = async (term) => {
     const response = await unsplash.get("/search/photos", {
       params: {
